@@ -1,3 +1,4 @@
+import { ApolloServer } from 'apollo-server'
 import { gql } from 'apollo-server'
 import { randomUUID } from 'crypto'
 
@@ -38,3 +39,19 @@ const typeDefs = gql`
     allPersons: [person!]!
   }
 `
+
+const resolvers = {
+  Query: {
+    personCount: () => persons.length,
+    allPersons: () => persons,
+  },
+}
+
+const server = new ApolloServer({
+  typeDefs: typeDefs,
+  resolvers,
+})
+
+server.listen().then(({ url }) => {
+  console.log(`Server listening on ${url}`)
+})
