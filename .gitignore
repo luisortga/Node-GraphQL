@@ -1,0 +1,7 @@
+node_modules/
+dist/
+logs/
+*.log
+.env
+.prettierrc
+eslint.config.js
