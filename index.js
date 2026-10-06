@@ -26,24 +26,43 @@ const persons = [
 ]
 
 const typeDefs = gql`
-  type person {
-    name: String!
-    phone: String
+  type Address {
     street: String!
     city: String!
+  }
+
+  type Person {
+    name: String!
+    phone: String
+    address: Address!
     id: ID!
   }
 
   type Query {
     personCount: Int!
-    allPersons: [person!]!
+    allPersons: [Person!]!
+    findPerson(name: String!): Person
   }
 `
+
+// obligatorio en graphql: !
 
 const resolvers = {
   Query: {
     personCount: () => persons.length,
     allPersons: () => persons,
+    findPerson: (root, args) => {
+      const { name } = args
+      return persons.find((person) => person.name === name)
+    },
+  },
+  Person: {
+    address: (root) => {
+      return {
+        street: root.street,
+        city: root.city,
+      }
+    },
   },
 }
 
