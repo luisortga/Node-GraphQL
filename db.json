@@ -1,0 +1,24 @@
+{
+  "persons": [
+    {
+      "name": "Luis Ortega",
+      "phone": "123-456-7890",
+      "street": "123 Main St",
+      "city": "Anytown",
+      "id": "2c911f1b-36ec-4432-a69b-bf5d96dc4991"
+    },
+    {
+      "name": "Will Ferrell",
+      "phone": "987-654-3210",
+      "street": "456 Elm St",
+      "city": "Othertown",
+      "id": "ca02ff66-4226-4e65-afb2-c2e65ffcb5ab"
+    },
+    {
+      "name": "Jacob Wisiorowski",
+      "street": "789 Oak St",
+      "city": "Milwaukee",
+      "id": "31f0e117-0886-4da6-a752-9894bbfe0204"
+    }
+  ]
+}
